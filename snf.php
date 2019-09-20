@@ -1,32 +1,25 @@
 <?php
-require('fpdf.php');
+use setasign\Fpdi\Fpdi;
 
-//create a FPDF object
-$pdf=new FPDF();
+require_once('fpdf.php');
+require_once('FPDI-2.2.0/src/autoload.php');
 
-//set document properties
-$pdf->SetAuthor('Lana Kovacevic');
-$pdf->SetTitle('FPDF tutorial');
+$fname = $_GET['fname'];
+// initiate FPDI
+$pdf = new Fpdi();
+// add a page
+$pdf->AddPage();
+// set the source file
+$pdf->setSourceFile('snf.pdf');
+// import page 1
+$tplIdx = $pdf->importPage(1);
+// use the imported page and place it at position 10,10 with a width of 100 mm
+$pdf->useTemplate($tplIdx, 0, 0, 220,300);
 
-//set font for the entire document
-$pdf->SetFont('Helvetica','B',20);
-$pdf->SetTextColor(50,60,100);
+// now write some text above the imported page
+$pdf->SetFont('Arial','B',9);
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetXY(50, 59);
+$pdf->Write(0, strtoupper($fname));
 
-//set up a page
-$pdf->AddPage('P');
-
-//insert an image and make it a link
-
-//display the title with a border around it
-$pdf->SetXY(50,20);
-$pdf->SetDrawColor(50,60,100);
-$pdf->Cell(100,10,'FPDF Tutorial',1,0,'C',0);
-
-//Set x and y position for the main text, reduce font size and write content
-$pdf->SetXY (10,50);
-$pdf->SetFontSize(10);
-$pdf->Write(5,'Congratulations! You have generated a PDF.');
-
-//Output the document
-$pdf->Output('example1.pdf','I');
-?>
+$pdf->Output();
