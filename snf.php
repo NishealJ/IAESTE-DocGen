@@ -1,25 +1,23 @@
 <?php
-use setasign\Fpdi\Fpdi;
+require_once("fpdf.php");
 
-require_once('fpdf.php');
-require_once('FPDI-2.2.0/src/autoload.php');
-
-$fname = $_GET['fname'];
-// initiate FPDI
-$pdf = new Fpdi();
-// add a page
+$pdf=new FPDF('P','mm','A4');
 $pdf->AddPage();
-// set the source file
-$pdf->setSourceFile('snf.pdf');
-// import page 1
-$tplIdx = $pdf->importPage(1);
-// use the imported page and place it at position 10,10 with a width of 100 mm
-$pdf->useTemplate($tplIdx, 0, 0, 220,300);
+$pdf->SetFont('Arial','B',18);
 
-// now write some text above the imported page
-$pdf->SetFont('Arial','B',9);
-$pdf->SetTextColor(0, 0, 0);
-$pdf->SetXY(50, 59);
-$pdf->Write(0, strtoupper($fname));
+$pdf->SetTitle("Title");
+$pdf->Cell(40);
+$pdf->Cell(82,10,"STUDENT NOMINATED",0,0,'C');
+$pdf->SetFont('Arial','',11);
+$pdf->Cell(15,10,'Ref. No.',0,0);
+$pdf->Cell(30,10,$_POST['fname'],0,1);
 
-$pdf->Output();
+$pdf->Cell(10);
+$pdf->SetFont('ARIAL','UB',9);
+$pdf->Write(10, "IMPORTANT:");
+
+$pdf->SetFont('ARIAL','',10.5);
+$pdf->Write(10," Under no circumstances are you allowed to contact the company before being accepted.");
+$pdf->output();
+
+?>
