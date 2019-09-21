@@ -1,94 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
 
-<h2>SNF Form</h2>
+  <h2>SNF Form</h2>
+
+  <div class="container">
+    <form action="snf.php" method="POST">
+      <label for="fname">Family Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Your Family name..">
+
+      <label for="name">First Name</label>
+      <input type="text" id="name" name="name" placeholder="Your First name..">
+
+      <label for="hal1">Home Address Line 1 Name</label>
+      <input type="text" id="hal1" name="hal1" placeholder="Flat Number/House Number ,Street Name">
+
+      <label for="hal2">Home Address Line 2</label>
+      <input type="text" id="hal2" name="hal2" placeholder="Locality Name">
+
+      <label for="hal3">Home Address Line 3</label>
+      <input type="text" id="hal3" name="hal3" placeholder="City Name, District Name and State Name">
+
+      <label for="phn">Phone Number</label>
+      <input type="text" id="phn" name="phn" placeholder="Your phone number">
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Your Email">
+
+      <label for="adl1">Address During Terms Line 1</label>
+      <input type="text" id="adl1" name="adl1" placeholder="Flat Number/House Number ,Street Name">
+
+      <label for="adl2">Home Address Line 2</label>
+      <input type="text" id="adl2" name="adl2" placeholder="Locality Name">
+
+      <label for="adl3">Home Address Line 3</label>
+      <input type="text" id="adl3" name="adl3" placeholder="City Name, District Name and State Name">
+
+      <label for="alt-email">Alternate Email</label>
+      <input type="text" id="alt-email" name="alt-email" placeholder="Your Alternate Email">
 
 
-<div class="container">
-  <form action="snf.php" action="POST">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-25">
-        <input type="text" id="fname" name="fname" placeholder="Your name..">
-      </div>
-       <div class="col-25">
-       <input type="submit" value="Submit">
-      </div>
-    </div>
-  </form>
-</div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
 </body>
-</html>
 
+</html>
