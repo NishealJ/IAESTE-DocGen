@@ -1,7 +1,5 @@
 <?php
-//require __DIR__ . '/vendor/autoload.php';
-
-require('fpdf.php');
+require('./vendor/autoload.php');
 
 $pdf = new FPDF();
 
