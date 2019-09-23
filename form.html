@@ -1,94 +1,398 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .col-25, .col-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <form action="snf.php" method="POST">
 
-<h2>SNF Form</h2>
+                    <hr class="mb-5" />
 
+                    <div id="subform-1" class="d-block">
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-3 col-form-label">Family Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="fname" name="fname"
+                                    placeholder="Your Family name..">
+                            </div>
+                        </div>
 
-<div class="container">
-  <form action="snf.php" action="POST">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-25">
-        <input type="text" id="fname" name="fname" placeholder="Your name..">
-      </div>
-       <div class="col-25">
-       <input type="submit" value="Submit">
-      </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-3 col-form-label">First Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="name" name="name"
+                                    placeholder="Your First name..">
+                            </div>
+                        </div>
+
+                        <p class="lead">Home Address</p>
+                        <div class="form-group row">
+                            <label for="hal1" class="col-sm-3 col-form-label">Line 1</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="hal1" name="hal1"
+                                    placeholder="House Number, Street Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hal1" class="col-sm-3 col-form-label">Line 2</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="hal1" name="hal1"
+                                    placeholder="Locality Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hal1" class="col-sm-3 col-form-label">Line 3</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="hal1" name="hal1"
+                                    placeholder="City Name, District Name and State Name">
+                            </div>
+                        </div>
+
+                        <p class="lead">Address During Terms</p>
+                        <div class="form-group row">
+                            <label for="adl1" class="col-sm-3 col-form-label">Line 1</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="adl1" name="adl1"
+                                    placeholder="House Number, Street Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="adl1" class="col-sm-3 col-form-label">Line 2</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="adl1" name="adl1"
+                                    placeholder="Locality Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="adl1" class="col-sm-3 col-form-label">Line 3</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="adl1" name="adl1"
+                                    placeholder="City Name, District Name and State Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="phn" class="col-sm-3 col-form-label">Phone Number</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control mb-4" id="phn" name="phn"
+                                    placeholder="Your phone number">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control mb-4" id="email" name="email"
+                                    placeholder="Your Email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-3 col-form-label">Alternate Email</label>
+                            <div class="col-sm-9">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="Your Alternate Email">
+                            </div>
+                        </div>
+
+                        <hr class="mb-4 mt-5" />
+
+                        <div class="text-right float-right mb-4">
+                            <button id="tab1_next" type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+
+                    <div id="subform-2" class="d-none">
+                        <div class="form-group row">
+                            <label for="dob" class="col-sm-3 col-form-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="dob" name="dob"
+                                    placeholder="Date of Birth (DD/MM/YYYY)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="pob" class="col-sm-3 col-form-label">Place of Birth</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="pob" name="pob"
+                                    placeholder="Place of Birth">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="nat" class="col-sm-3 col-form-label">Nationality</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="nat" name="nat"
+                                    placeholder="Your Nationality">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="doi" class="col-sm-3 col-form-label">Date of Issue</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="doi" name="doi"
+                                    placeholder="Date of Passport Issue">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="poi" class="col-sm-3 col-form-label">Place of Issue</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="poi" name="poi"
+                                    placeholder="Place of Passport Issue">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="vu" class="col-sm-3 col-form-label">Valid until</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="vu" name="vu"
+                                    placeholder="Passport Valid until (day/month/year)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sex" class="col-sm-3 col-form-label">Sex</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="sex" name="sex"
+                                    placeholder="Your Gender">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ms" class="col-sm-3 col-form-label">Marital status</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="ms" name="ms"
+                                    placeholder="Your marital status">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="med" class="col-sm-3 col-form-label">Are you medically fit</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="med" name="med"
+                                    placeholder="Are you medically fit(if not give details in encl.)">
+                            </div>
+                        </div>
+
+                        <hr class="mb-4" />
+
+                        <div class="text-left float-left mb-4">
+                            <button id="tab2_prev" type="button" class="btn btn-primary">Previous</button>
+                        </div>
+
+                        <div class="text-right float-right mb-4">
+                            <button id="tab2_next" type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+
+                    <div id="subform-3" class="d-none">
+                        <div class="form-group row">
+                            <label for="uni" class="col-sm-3 col-form-label">University/College</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="uni" name="uni"
+                                    placeholder="Your University Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fac" class="col-sm-3 col-form-label">Faculty</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="fac" name="fac"
+                                    placeholder="Your Faculty">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="spec" class="col-sm-3 col-form-label">Specialization</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="spec" name="spec"
+                                    placeholder="Specialization">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="yos" class="col-sm-3 col-form-label">Completed years of study:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="yos" name="yos"
+                                    placeholder="Completed years of study">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="languages" class="col-sm-3 col-form-label">Knowledge of languages</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="languages" name="languages"
+                                    placeholder="Knowledge of languages, eg. English(1), Hindi(2)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="years" class="col-sm-3 col-form-label">Total years required</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="years" name="years"
+                                    placeholder="Total years required">
+                            </div>
+                        </div>
+
+                        <hr class="mb-4" />
+
+                        <div class="text-left float-left mb-4">
+                            <button id="tab3_prev" type="button" class="btn btn-primary">Previous</button>
+                        </div>
+
+                        <div class="text-right float-right mb-4">
+                            <button id="tab3_next" type="button" class="btn btn-primary">Next</button>
+                        </div>
+
+                    </div>
+
+                    <div id="subform-4" class="d-none">
+
+                        <div class="form-group row">
+                            <label for="training-start" class="col-sm-3 col-form-label">Desired period of training, Start Date:
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="training-start" name="training-start"
+                                    placeholder="Start date of internship">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="training-end" class="col-sm-3 col-form-label">Desired period of training, End
+                                Date:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="training-end" name="training-end"
+                                    placeholder="End date of internship">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="report" class="col-sm-3 col-form-label">Are you required/do you wish to prepare a
+                                technical report during the training period?</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="report" name="report"
+                                    placeholder="Yes/No">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="date" class="col-sm-3 col-form-label">Date</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="date" name="date"
+                                    placeholder="Today's Date(day/month/year)">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="country" class="col-sm-3 col-form-label">Nominating Country</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="country" name="country"
+                                    placeholder="Name of Nominating Country">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="head" class="col-sm-3 col-form-label">Name of Head Exchange of the Local
+                                Committee</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="head" name="head"
+                                    placeholder="Full Name of Head Exchange ">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="lc" class="col-sm-3 col-form-label">Local Committee Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="lc" name="lc"
+                                    placeholder="Name of the local committee you applied through">
+                            </div>
+                        </div>
+
+                        <hr class="mb-4" />
+
+                        <div class="text-left float-left mb-4">
+                            <button id="tab4_prev" type="button" class="btn btn-primary">Previous</button>
+                        </div>
+
+                        <div class="text-right float-right mb-4">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </form>
-</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script text="text/javascript">
+        $(document).ready(function () {
+            $("#tab1_next").click(function () {
+                $("#subform-1").removeClass("d-block");
+                $("#subform-1").addClass("d-none");
+                $("#subform-2").removeClass("d-none");
+                $("#subform-2").addClass("d-block");
+            })
+
+            $("#tab2_next").click(function () {
+                $("#subform-2").removeClass("d-block");
+                $("#subform-2").addClass("d-none");
+                $("#subform-3").removeClass("d-none");
+                $("#subform-3").addClass("d-block");
+            })
+
+            $("#tab2_prev").click(function () {
+                $("#subform-2").removeClass("d-block");
+                $("#subform-2").addClass("d-none");
+                $("#subform-1").removeClass("d-none");
+                $("#subform-1").addClass("d-block");
+            })
+
+            $("#tab3_next").click(function () {
+                $("#subform-3").removeClass("d-block");
+                $("#subform-3").addClass("d-none");
+                $("#subform-4").removeClass("d-none");
+                $("#subform-4").addClass("d-block");
+            })
+
+            $("#tab3_prev").click(function () {
+                $("#subform-3").removeClass("d-block");
+                $("#subform-3").addClass("d-none");
+                $("#subform-2").removeClass("d-none");
+                $("#subform-2").addClass("d-block");
+            })
+
+            $("#tab4_prev").click(function () {
+                $("#subform-4").removeClass("d-block");
+                $("#subform-4").addClass("d-none");
+                $("#subform-3").removeClass("d-none");
+                $("#subform-3").addClass("d-block");
+            })
+        });
+    </script>
 
 </body>
-</html>
 
+</html>

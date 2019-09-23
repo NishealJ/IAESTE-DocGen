@@ -1,0 +1,16 @@
+{
+  "name": "iaeste/docgen",
+  "description": "document generator for iaeste internship applicants",
+  "type": "project",
+  "license": "gpl2",
+  "authors": [
+    {
+      "name": "Pratik Jain",
+      "email": "pratikjain0411@gmail.com"
+    }
+  ],
+  "require": {
+    "setasign/fpdf": "^1.8",
+    "setasign/fpdi": "^2.0"
+  }
+}
