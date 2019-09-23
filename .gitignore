@@ -1,0 +1,18 @@
+# php
+vendor/
+*.phar
+
+# macOS
+.DS_STORE
+.AppleDouble
+.LSOverride
+
+# vs code
+.vscode/
+
+# linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
