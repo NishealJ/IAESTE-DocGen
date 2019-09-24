@@ -19,6 +19,14 @@
 
                     <div id="subform-1" class="d-block">
                         <div class="form-group row">
+                            <label for="ref" class="col-sm-3 col-form-label">Reference Number</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control mb-4" id="ref" name="ref"
+                                    placeholder="Your Offer Reference Number">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="fname" class="col-sm-3 col-form-label">Family Name</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control mb-4" id="fname" name="fname"
@@ -44,17 +52,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="hal1" class="col-sm-3 col-form-label">Line 2</label>
+                            <label for="hal2" class="col-sm-3 col-form-label">Line 2</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="hal1" name="hal1"
+                                <input type="text" class="form-control mb-4" id="hal2" name="hal2"
                                     placeholder="Locality Name">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="hal1" class="col-sm-3 col-form-label">Line 3</label>
+                            <label for="hal3" class="col-sm-3 col-form-label">Line 3</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="hal1" name="hal1"
+                                <input type="text" class="form-control mb-4" id="hal3" name="hal3"
                                     placeholder="City Name, District Name and State Name">
                             </div>
                         </div>
@@ -69,17 +77,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="adl1" class="col-sm-3 col-form-label">Line 2</label>
+                            <label for="adl2" class="col-sm-3 col-form-label">Line 2</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="adl1" name="adl1"
+                                <input type="text" class="form-control mb-4" id="adl2" name="adl2"
                                     placeholder="Locality Name">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="adl1" class="col-sm-3 col-form-label">Line 3</label>
+                            <label for="adl3" class="col-sm-3 col-form-label">Line 3</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="adl1" name="adl1"
+                                <input type="text" class="form-control mb-4" id="adl3" name="adl3"
                                     placeholder="City Name, District Name and State Name">
                             </div>
                         </div>
@@ -101,9 +109,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-sm-3 col-form-label">Alternate Email</label>
+                            <label for="alt-email" class="col-sm-3 col-form-label">Alternate Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="email" name="email"
+                                <input type="email" class="form-control" id="alt-email" name="alt-email"
                                     placeholder="Your Alternate Email">
                             </div>
                         </div>
@@ -119,8 +127,7 @@
                         <div class="form-group row">
                             <label for="dob" class="col-sm-3 col-form-label">Date of Birth</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="dob" name="dob"
-                                    placeholder="Date of Birth (DD/MM/YYYY)">
+                                <input type="date" class="form-control mb-4" id="dob" name="dob">
                             </div>
                         </div>
 
@@ -141,10 +148,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="doi" class="col-sm-3 col-form-label">Date of Issue</label>
+                            <label for="pass-no" class="col-sm-3 col-form-label">Passport Number</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="doi" name="doi"
-                                    placeholder="Date of Passport Issue">
+                                <input type="text" class="form-control mb-4" id="pass-no" name="pass-no"
+                                    placeholder="Your passport number">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="doi" class="col-sm-3 col-form-label">Date of Passport Issue</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control mb-4" id="doi" name="doi">
                             </div>
                         </div>
 
@@ -157,18 +171,27 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="vu" class="col-sm-3 col-form-label">Valid until</label>
+                            <label for="vu" class="col-sm-3 col-form-label">Passport Valid Until</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="vu" name="vu"
-                                    placeholder="Passport Valid until (day/month/year)">
+                                <input type="date" class="form-control mb-4" id="vu" name="vu">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="sex" class="col-sm-3 col-form-label">Sex</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="sex" name="sex"
-                                    placeholder="Your Gender">
+                            <div class="col-sm-9 mb-4">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="sex_m" name="sex" class="custom-control-input" value="male">
+                                    <label class="custom-control-label" for="sex_m">Male</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="sex_f" name="sex" class="custom-control-input" value="female">
+                                    <label class="custom-control-label" for="sex_f">Female</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="sex_o" name="sex" class="custom-control-input" value="others">
+                                    <label class="custom-control-label" for="sex_o">Other</label>
+                                </div>
                             </div>
                         </div>
 
@@ -263,10 +286,11 @@
                     <div id="subform-4" class="d-none">
 
                         <div class="form-group row">
-                            <label for="training-start" class="col-sm-3 col-form-label">Desired period of training, Start Date:
+                            <label for="training-start" class="col-sm-3 col-form-label">Desired period of training,
+                                Start Date:
                             </label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="training-start" name="training-start"
+                                <input type="date" class="form-control mb-4" id="training-start" name="training-start"
                                     placeholder="Start date of internship">
                             </div>
                         </div>
@@ -275,25 +299,30 @@
                             <label for="training-end" class="col-sm-3 col-form-label">Desired period of training, End
                                 Date:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="training-end" name="training-end"
+                                <input type="date" class="form-control mb-4" id="training-end" name="training-end"
                                     placeholder="End date of internship">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="report" class="col-sm-3 col-form-label">Are you required/do you wish to prepare a
-                                technical report during the training period?</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="report" name="report"
-                                    placeholder="Yes/No">
+                            <label for="report" class="col-sm-3 col-form-label">Are you required/do you wish to prepare
+                                a technical report during the training period?</label>
+                            <div class="col-sm-9 mb-4">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="report-yes" name="report" class="custom-control-input">
+                                    <label class="custom-control-label" for="report-yes">Yes</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="report-no" name="report" class="custom-control-input">
+                                    <label class="custom-control-label" for="report-no">No</label>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="date" class="col-sm-3 col-form-label">Date</label>
+                            <label for="date" class="col-sm-3 col-form-label">Today's Date</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control mb-4" id="date" name="date"
-                                    placeholder="Today's Date(day/month/year)">
+                                <input type="date" class="form-control mb-4" id="date" name="date">
                             </div>
                         </div>
 
