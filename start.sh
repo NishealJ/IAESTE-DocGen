@@ -1,4 +1,4 @@
-sudo bash install.sh
+bash install.sh
 php -S localhost:8080
 
 
