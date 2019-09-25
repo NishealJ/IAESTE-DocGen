@@ -13,4 +13,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         open http://localhost:8080/form.html
 fi
 
-php -S localhost:
+php -S localhost:8080
+
+
