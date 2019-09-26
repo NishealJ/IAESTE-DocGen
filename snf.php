@@ -199,4 +199,143 @@ $pdf->SetLineWidth(0.2);
 $pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
 $pdf->Ln(5);
 
+// Study Informatiom Section begins here
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(0, 0, 'Study Information');
+$pdf->Ln(6);
+
+// University/College
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(65, 0, 'University/College:');
+$pdf->Cell(25);
+
+// Knowledge of Languages
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(44, 0, 'Knowledge of Languages:');
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(14, 0,strtotime($_POST['languages']));
+$pdf->Ln(4);
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(65, 0, strtoupper($_POST['uni']));
+
+$pdf->Cell(25);
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(14, 0,strtoupper($_POST['languages']));
+$pdf->Ln(4);
+
+$pdf->Cell(90);
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(21, 0, '(1=excellent, 2=good, 3=fair)');
+$pdf->Ln(4);
+
+// faculty
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(12, 0, 'Faculty:');
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(14, 0,strtoupper($_POST['fac']));
+$pdf->Ln(5);
+
+// specialization
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(22, 0, 'Specialization:');
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(14, 0,strtoupper($_POST['spec']));
+$pdf->Ln(5);
+
+// Completed years of study
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(38, 0, 'Completed years of study:');
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(52, 0,strtoupper($_POST['yos']));
+
+// Total years required
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(30, 0, 'Total years required:');
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(10, 0,strtoupper($_POST['years']));
+$pdf->Ln(5);
+
+
+// line
+$pdf->SetLineWidth(0.2);
+$pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
+$pdf->Ln(5);
+
+
+// important guideline
+$pdf->SetFont('Arial', 'BU', 9);
+$pdf->Write(5, 'IMPORTANT:');
+$pdf->SetFont('Arial', '', 9);
+$pdf->Write(5, ' A list of subjects studied by the time training begins must be enclosed with this form as well as a Curriculum Vitae (including details of previous work) and an introductory letter to the employer.');
+$pdf->Ln(8);
+
+// line
+$pdf->SetLineWidth(0.2);
+$pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
+$pdf->Ln(5);
+
+
+// training start date
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(50, 0, 'Desired period of training (day/month/year)');
+$pdf->Ln(3);
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(72, 0, '(Within the period specified by the employer):');
+
+$pdf->Cell(8, 0, 'from:');
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(24, 0,date("d/m/Y", strtotime($_POST['training-start'])));
+
+
+// training end date
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(5, 0, 'to:');
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(20, 0,date("d/m/Y", strtotime($_POST['training-end'])));
+$pdf->ln(5);
+
+// wish lodging
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(50, 0, 'Do you wish lodging to be found for you?:');
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(10, 0, strcmp("ON", strtoupper($_POST['lodge'])) == 0 ? "YES" : "NO");
+$pdf->Ln(5);
+
+// technical report
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(122, 0, 'Are you required/do you wish to prepare a technical report during the training period?:');
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(10, 0, strcmp("ON", strtoupper($_POST['report'])) == 0 ? "YES" : "NO");
+$pdf->Ln(5);
+
+// line
+$pdf->SetLineWidth(0.2);
+$pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
+$pdf->Ln(5);
+
+// today's date
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(8, 0, 'Date:');
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(60, 0,date("d/m/Y", strtotime($_POST['date'])));
+
+// Student Sign
+$pdf->Cell(30);
+$pdf->SetFont('Arial', '', 9);
+$pdf->Cell(28, 0, 'Student Sign:');
+$pdf->Ln(5);
+
+// line
+$pdf->SetLineWidth(0.2);
+$pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
+$pdf->Ln(5);
+
+
 $pdf->Output();
