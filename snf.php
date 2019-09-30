@@ -47,7 +47,7 @@ $pdf->Cell(5);
 
 // date of birth
 $pdf->SetFont('Arial', '', 9);
-$pdf->Cell(44, 0, 'Date of birth (day/month/year):');
+$pdf->Cell(45, 0, 'Date of birth (day/month/year):');
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(14, 0, date("d/m/Y", strtotime($_POST['dob'])));
 $pdf->Ln(4);
@@ -125,7 +125,6 @@ $pdf->Cell(14, 0, date("d/m/Y", strtotime($_POST['vu'])));
 $pdf->Ln(5);
 
 // phone number
-// FIXME: formatting of international phone number
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(16, 0, 'Phone no:');
 $pdf->SetFont('Arial', 'B', 9);
@@ -147,7 +146,6 @@ $pdf->Cell(15, 0, strtoupper($_POST['sex']));
 $pdf->Ln(8);
 
 // address during terms
-// FIXME: need better format for address either 3-line or 4-line
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(33, 0, 'Address during terms:');
 $pdf->Cell(57);
@@ -173,7 +171,6 @@ $pdf->Cell(85, 0, strtoupper($_POST['adl3']));
 $pdf->Ln(10);
 
 // alternate phone number
-// FIXME: formatting of international alternate phone number
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(16, 0, 'Phone no:');
 $pdf->SetFont('Arial', 'B', 9);
@@ -214,7 +211,7 @@ $pdf->Cell(25);
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(44, 0, 'Knowledge of Languages:');
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(14, 0,strtotime($_POST['languages']));
+$pdf->Cell(14, 0, strtotime($_POST['languages']));
 $pdf->Ln(4);
 
 $pdf->SetFont('Arial', 'B', 9);
@@ -222,7 +219,7 @@ $pdf->Cell(65, 0, strtoupper($_POST['uni']));
 
 $pdf->Cell(25);
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(14, 0,strtoupper($_POST['languages']));
+$pdf->Cell(14, 0, strtoupper($_POST['languages']));
 $pdf->Ln(4);
 
 $pdf->Cell(90);
@@ -235,7 +232,7 @@ $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(12, 0, 'Faculty:');
 
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(14, 0,strtoupper($_POST['fac']));
+$pdf->Cell(14, 0, strtoupper($_POST['fac']));
 $pdf->Ln(5);
 
 // specialization
@@ -243,7 +240,7 @@ $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(22, 0, 'Specialization:');
 
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(14, 0,strtoupper($_POST['spec']));
+$pdf->Cell(14, 0, strtoupper($_POST['spec']));
 $pdf->Ln(5);
 
 // Completed years of study
@@ -251,14 +248,14 @@ $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(38, 0, 'Completed years of study:');
 
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(52, 0,strtoupper($_POST['yos']));
+$pdf->Cell(52, 0, strtoupper($_POST['yos']));
 
 // Total years required
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(30, 0, 'Total years required:');
 
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(10, 0,strtoupper($_POST['years']));
+$pdf->Cell(10, 0, strtoupper($_POST['years']));
 $pdf->Ln(5);
 
 
@@ -290,21 +287,21 @@ $pdf->Cell(72, 0, '(Within the period specified by the employer):');
 
 $pdf->Cell(8, 0, 'from:');
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(24, 0,date("d/m/Y", strtotime($_POST['training-start'])));
+$pdf->Cell(24, 0, date("d/m/Y", strtotime($_POST['training-start'])));
 
 
 // training end date
 $pdf->SetFont('Arial', '', 9);
 $pdf->Cell(5, 0, 'to:');
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(20, 0,date("d/m/Y", strtotime($_POST['training-end'])));
+$pdf->Cell(20, 0, date("d/m/Y", strtotime($_POST['training-end'])));
 $pdf->ln(5);
 
 // wish lodging
 $pdf->SetFont('Arial', '', 9);
-$pdf->Cell(50, 0, 'Do you wish lodging to be found for you?:');
+$pdf->Cell(60, 0, 'Do you wish lodging to be found for you?:');
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(10, 0, strcmp("ON", strtoupper($_POST['lodge'])) == 0 ? "YES" : "NO");
+$pdf->Cell(10, 0, strtoupper($_POST['lodge']));
 $pdf->Ln(5);
 
 // technical report
@@ -321,10 +318,9 @@ $pdf->Ln(5);
 
 // today's date
 $pdf->SetFont('Arial', '', 9);
-$pdf->Cell(8, 0, 'Date:');
-
+$pdf->Cell(9, 0, 'Date:');
 $pdf->SetFont('Arial', 'B', 9);
-$pdf->Cell(60, 0,date("d/m/Y", strtotime($_POST['date'])));
+$pdf->Cell(60, 0, date("d/m/Y", strtotime($_POST['date'])));
 
 // Student Sign
 $pdf->Cell(30);
@@ -335,7 +331,42 @@ $pdf->Ln(5);
 // line
 $pdf->SetLineWidth(0.2);
 $pdf->Line($pdf->GetX() + 1, $pdf->GetY(), $pdf->GetX() + 159, $pdf->GetY());
-$pdf->Ln(5);
+$pdf->Ln(8);
+
+// official use only
+$pdf->SetTextColor(107, 107, 107);
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(28, 0, 'For official use only:');
+$pdf->Ln(8);
+
+// date line
+$pdf->SetTextColor(107, 107, 107);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(11, 0, 'Date:');
+
+// nominating country
+$pdf->Cell(22);
+$pdf->SetTextColor(107, 107, 107);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(40, 0, 'Nominating Country:');
+
+// sending country
+$pdf->Cell(18);
+$pdf->SetTextColor(107, 107, 107);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(57, 0, 'On behalf of sending country:');
+$pdf->Ln(10);
+
+// input dashes
+$pdf->SetTextColor(0, 0, 0);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(23, 0, '...................');
+$pdf->Cell(10);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(48, 0, '..........................................');
+$pdf->Cell(10);
+$pdf->SetFont('Arial', 'B', 11);
+$pdf->Cell(65, 0, '..........................................................');
 
 
 $pdf->Output();
