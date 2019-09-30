@@ -355,10 +355,20 @@ $pdf->Cell(18);
 $pdf->SetTextColor(107, 107, 107);
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(57, 0, 'On behalf of sending country:');
-$pdf->Ln(10);
+$pdf->Ln(8);
 
 // input dashes
 $pdf->SetTextColor(0, 0, 0);
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(23, 0, date("d/m/Y", strtotime($_POST['date'])));
+$pdf->Cell(27);
+
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(28, 0, strtoupper($_POST['country']));
+$pdf->Cell(10);
+$pdf->ln(2);
+
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(23, 0, '...................');
 $pdf->Cell(10);
@@ -367,6 +377,16 @@ $pdf->Cell(48, 0, '..........................................');
 $pdf->Cell(10);
 $pdf->SetFont('Arial', 'B', 11);
 $pdf->Cell(65, 0, '..........................................................');
+$pdf->ln(4);
 
+$pdf->Cell(91);
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(28, 0, strtoupper($_POST['head']));
+$pdf->ln(4);
+
+$pdf->Cell(91);
+$pdf->SetFont('Arial', 'B', 9);
+$pdf->Cell(29, 0, 'HEAD EXCHANGE');
+$pdf->Cell(25, 0, strtoupper($_POST['lc']));
 
 $pdf->Output();
